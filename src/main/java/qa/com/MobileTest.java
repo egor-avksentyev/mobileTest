@@ -9,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
@@ -68,26 +66,19 @@ public class MobileTest extends storeMethods {
 
         System.out.println("Current Prise " + price1 + "$");
 
-        double costCurrent =  Double.parseDouble (price1);
-
         String price2 = getPrice("//span[contains(text(),'Samsung Galaxy S6')]/ancestor::div//span[contains(text(),'2699')]");
 
         System.out.println("The prise that was before "+ price2 + "$");
 
-        double costPrev =  Double.parseDouble (price2);
-
-        double result =  costPrev - costCurrent ;
-        System.out.println("Feel the difference " +result + "$");
+        System.out.println("Feel the difference " + (Double.parseDouble (price2) - Double.parseDouble (price1)) + "$");
 
         //Test 2
 
-        ((JavascriptExecutor)driver).executeScript("window.open()");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
-        driver.get("https://unicode-table.com/ru/");
+        openLinkinNewtab("https://unicode-table.com/ru/");
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//li[@data-code='81' and contains(text(),'Q')]"))));
-
+/**
+ * */
         System.out.println(xpathkiller(81,"Q"));
         System.out.println(xpathkiller(38,"&"));
         System.out.println(xpathkiller(65,"A"));
