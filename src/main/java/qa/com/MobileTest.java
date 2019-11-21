@@ -58,16 +58,16 @@ public class MobileTest extends storeMethods {
         //Test1
         System.out.println("Starting Tes1");
         driver.get("https://supsystic.com/example/comparison-example/");
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//span[contains(text(),'Samsung Galaxy S6')]/ancestor::div//span[contains(text(),'959')]"))));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[contains(@class,'ptsCol-2')]//span[contains(@style,'#90c820')]"))));
         /**
          * getPrice() method uses current xpath , gets text from this xpath , replace "$" symbol in order to parse correctly and returns string which contains price.
          * Please take into consideration that this method location is in the storeMethods class
          *
          * @param xpath current xpath
          */
-        String price1 = getPrice("//span[contains(text(),'Samsung Galaxy S6')]/ancestor::div//span[contains(text(),'959')]");
+        String price1 = getPrice("//div[contains(@class,'ptsCol-2')]//span[contains(@style,'#90c820')]");
         System.out.println("Current Prise " + price1 + "$");
-        String price2 = getPrice("//span[contains(text(),'Samsung Galaxy S6')]/ancestor::div//span[contains(text(),'2699')]");
+        String price2 = getPrice("//div[contains(@class,'ptsCol-2')]//span[contains(@style,'#9d9d9d')]");
         System.out.println("The prise that was before " + price2 + "$");
         System.out.println("Feel the difference " + (Double.parseDouble(price2) - Double.parseDouble(price1)) + "$");
 
