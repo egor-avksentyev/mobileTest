@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-public class MobileTest extends storeMethods {
+public class MobileTest extends StoreMethods {
 
 
     // Instance of WebDriver
@@ -70,6 +70,10 @@ public class MobileTest extends storeMethods {
         String price2 = getPrice("//div[contains(@class,'ptsCol-2')]//span[contains(@style,'#9d9d9d')]");
         System.out.println("The prise that was before " + price2 + "$");
         System.out.println("Feel the difference " + (Double.parseDouble(price2) - Double.parseDouble(price1)) + "$");
+    }
+    @Test
+    public void letterTest () {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //Test 2
         System.out.println("Starting Tes2");

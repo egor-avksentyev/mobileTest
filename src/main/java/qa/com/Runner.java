@@ -14,7 +14,7 @@ public class Runner {
     public static void main(String[] args) {
 
         // We can run test in that way
-        Result result = JUnitCore.runClasses(MobileTest.class);
+        Result result = JUnitCore.runClasses(MobileTest.class );
 
         // And then work with the result
         if (result.wasSuccessful()) {

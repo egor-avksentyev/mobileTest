@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.ArrayList;
 
-public class storeMethods {
+public class StoreMethods {
 
 
     public String xpathkiller(int number, String letter) {
