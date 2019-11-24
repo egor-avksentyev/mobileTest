@@ -1,4 +1,4 @@
-package qa.com;
+package com.qa.test;
 
 import org.junit.After;
 import org.junit.Before;
